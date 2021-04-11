@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\HackTJ2021\examples-master\examples-master\lite\examples\object_detection\android\lib_task_api\src\main\AndroidManifest.xml
+8-->D:\HackTJ2021\examples-master\streetsafety\android\lib_task_api\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->D:\HackTJ2021\examples-master\examples-master\lite\examples\object_detection\android\lib_task_api\src\main\AndroidManifest.xml
+9-->D:\HackTJ2021\examples-master\streetsafety\android\lib_task_api\src\main\AndroidManifest.xml
 10
 11</manifest>

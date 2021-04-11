@@ -37,6 +37,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.io.IOException;
 
 import java.util.ArrayList;
@@ -231,7 +233,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                         result.setLocation(location);
                         mappedRecognitions.add(result);
 
-                        //displayPopUp();
+                        displayPopUp();
                         playSound();
                       }
                     }
@@ -295,21 +297,27 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
   public void displayPopUp() {
     View parentLayout = findViewById(android.R.id.content);
-    //Snackbar mySnackbar = Snackbar.make(parentLayout, "Pedestrian Detected", Snackbar.LENGTH_LONG);
+    Snackbar mySnackbar = Snackbar.make(parentLayout, "Pedestrian Detected", Snackbar.LENGTH_LONG);
 
     try {
       if (snackBarShowing == 0) {
         Thread.sleep(3000);
-        // mySnackbar.show();
+        mySnackbar.show();
       }
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
     }
   }
   public void playSound() {
-    //View parentLayout = findViewById(android.R.id.content);
-    //Snackbar soundTest = Snackbar.make(parentLayout, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", Snackbar.LENGTH_LONG);
-    MediaPlayer mp = MediaPlayer.create(this, R.raw.dababy);
-    mp.start();
+    MediaPlayer mp = MediaPlayer.create(this,R.raw.reminder);
+    MediaPlayer mp2 = MediaPlayer.create(this, R.raw.dababy);
+    try {
+        mp.start();
+        Thread.sleep(4500);
+        mp2.start();
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+    }
+
   }
 }
